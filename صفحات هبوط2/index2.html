@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraBand | The Next-Gen Wellness Tracker</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and use Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', // Indigo 600
+                        'primary-light': '#818cf8', // Indigo 400
+                        'secondary': '#10b981', // Emerald 500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light Gray Background */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom scroll behavior for navigation */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for the FAQ accordion */
+        .faq-item input[type="checkbox"]:checked ~ .faq-content {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body class="smooth-scroll text-gray-900">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-primary tracking-tight">Aura<span class="text-secondary">Band</span></a>
+            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#features" class="hover:text-primary transition duration-150">Features</a>
+                <a href="#benefits" class="hover:text-primary transition duration-150">Benefits</a>
+                <a href="#reviews" class="hover:text-primary transition duration-150">Reviews</a>
+                <a href="#pricing" class="hover:text-primary transition duration-150">Pricing</a>
+            </nav>
+            <a href="#pricing" class="px-4 py-2 bg-primary text-white font-semibold rounded-full hover:bg-primary-light transition duration-300 shadow-lg hidden sm:inline-block relative z-10">Order Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="py-16 md:py-24 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative">
+                <!-- Content Column -->
+                <div class="text-center md:text-left relative z-10">
+                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary bg-indigo-100 rounded-full mb-4">
+                        NEW RELEASE: 24/7 Wellness
+                    </span>
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Unlock Your Full Potential with <span class="text-primary">AuraBand.</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-10 max-w-lg mx-auto md:mx-0">
+                        The ultimate smart tracker that combines advanced health metrics with sleek, minimal design for effortless, all-day wear.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative z-20">
+                        <a href="#pricing" class="cta-button primary-cta">
+                            Get Your AuraBand Today
+                        </a>
+                        <a href="#features" class="cta-button secondary-cta">
+                            See How It Works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Image Column -->
+                <div class="relative flex justify-center items-center z-0">
+                    <img
+                        src="https://placehold.co/600x400/818cf8/ffffff?text=AuraBand+Product+Shot"
+                        alt="AuraBand Smart Wellness Tracker product photo on a wrist."
+                        class="w-full max-w-md h-auto rounded-3xl shadow-2xl transition duration-500 hover:scale-[1.02] relative z-10"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/818cf8/ffffff?text=AuraBand+Tracker';"
+                    >
+                    <!-- Decorative Blur Blob - moved behind image explicitly -->
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary rounded-full opacity-30 blur-xl md:w-32 md:h-32 z-0 pointer-events-none"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Features Grid -->
+        <section id="features" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Integrated Wellness Monitoring</h2>
+                <p class="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                    AuraBand tracks everything that matters, delivering actionable insights right to your phone.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1: Heart Rate -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border border-indigo-100 transition duration-300 hover:shadow-xl hover:scale-[1.01]">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 mb-4">
+                            <!-- Heart Icon SVG -->
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-Time Heart Rate</h3>
+                        <p class="text-gray-500">Continuous and accurate heart rate monitoring, tracking resting heart rate and peak performance zones.</p>
+                    </div>
+
+                    <!-- Feature 2: Sleep Tracking -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border border-indigo-100 transition duration-300 hover:shadow-xl hover:scale-[1.01]">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 mb-4">
+                            <!-- Moon Icon SVG -->
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Advanced Sleep Cycles</h3>
+                        <p class="text-gray-500">Detailed analysis of REM, Deep, and Light sleep stages to improve rest and energy levels.</p>
+                    </div>
+
+                    <!-- Feature 3: Hydration Alert -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border border-indigo-100 transition duration-300 hover:shadow-xl hover:scale-[1.01]">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 mb-4">
+                            <!-- Water Drop Icon SVG -->
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Custom Hydration Alerts</h3>
+                        <p class="text-gray-500">Smart reminders based on activity levels and environmental factors to keep you optimally hydrated.</p>
+                    </div>
+
+                    <!-- Feature 4: Stress Monitor -->
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border border-indigo-100 transition duration-300 hover:shadow-xl hover:scale-[1.01]">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 mb-4">
+                            <!-- Brain/Lightbulb Icon SVG -->
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13m-10 4h-4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8l-3 3 3 3"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Bio-Stress Monitoring</h3>
+                        <p class="text-gray-500">Analyzes heart rate variability (HRV) to identify stress peaks and suggest mindfulness breaks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Product Benefits -->
+        <section id="benefits" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Text Content -->
+                    <div class="space-y-10">
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-snug">
+                            Go Beyond Tracking, Achieve True Balance.
+                        </h2>
+                        <div class="space-y-8">
+                            <!-- Benefit 1 -->
+                            <div class="flex space-x-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.104A9 9 0 1110.08 19.38L3 21l1.62-7.08A9 9 0 0118.618 7.896z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-900">Optimize Recovery</h4>
+                                    <p class="text-gray-600 mt-1">Understand your physiological readiness score each morning. AuraBand ensures you know when to push and when to prioritize rest for peak daily performance.</p>
+                                </div>
+                            </div>
+
+                            <!-- Benefit 2 -->
+                            <div class="flex space-x-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-900">Boost Energy & Focus</h4>
+                                    <p class="text-gray-600 mt-1">By mastering your sleep and stress data, you naturally increase cognitive function, leading to better decision-making and sustained focus throughout the day.</p>
+                                </div>
+                            </div>
+
+                            <!-- Benefit 3 -->
+                            <div class="flex space-x-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v2m0 0l-1.5 1.5M12 10c-1.657 0-3 .895-3 2s1.343 2 3 2v2m0 0l1.5 1.5M4 4v5h5M3 15h3v3M21 9v5h-5M20 18h-3v-3"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-900">Unmatched Durability</h4>
+                                    <p class="text-gray-600 mt-1">Waterproof construction and a 7-day battery life mean the AuraBand stays on, so you never miss a data point, from the pool to your sleep cycle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Mockup (Graph/App) -->
+                    <div class="p-8 bg-indigo-50 rounded-3xl shadow-xl lg:order-last order-first">
+                        <img
+                            src="https://placehold.co/700x500/4f46e5/ffffff?text=App+Dashboard+Mockup"
+                            alt="A stylized mobile app dashboard showing health metrics"
+                            class="w-full h-auto rounded-xl shadow-2xl ring-4 ring-white/50"
+                            onerror="this.onerror=null;this.src='https://placehold.co/700x500/4f46e5/ffffff?text=App+Dashboard+Mockup';"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Customer Reviews -->
+        <section id="reviews" class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14">Hear From Our Wellness Community</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 transition duration-300 hover:border-primary-light">
+                        <div class="flex items-center text-yellow-500 mb-4">
+                            <!-- Star Icons -->
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                        </div>
+                        <blockquote class="text-gray-700 italic leading-relaxed">
+                            "I've tried them all, but AuraBand's focus on recovery and sleep deep-dives is a game changer. I feel more energized than ever."
+                        </blockquote>
+                        <footer class="mt-4 text-sm font-semibold text-gray-900">
+                            Sarah L., Fitness Coach
+                        </footer>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 transition duration-300 hover:border-primary-light">
+                        <div class="flex items-center text-yellow-500 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                        </div>
+                        <blockquote class="text-gray-700 italic leading-relaxed">
+                            "The design is incredibly minimalist. I wear it 24/7 without even thinking about it, and the battery life is truly outstanding."
+                        </blockquote>
+                        <footer class="mt-4 text-sm font-semibold text-gray-900">
+                            James R., Software Engineer
+                        </footer>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 transition duration-300 hover:border-primary-light">
+                        <div class="flex items-center text-yellow-500 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z"/></svg>
+                        </div>
+                        <blockquote class="text-gray-700 italic leading-relaxed">
+                            "The stress monitor has been invaluable for managing my busy schedule. It truly helps me find moments to breathe and reset."
+                        </blockquote>
+                        <footer class="mt-4 text-sm font-semibold text-gray-900">
+                            Dr. Emily C., Therapist
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Price Box with CTA -->
+        <section id="pricing" class="py-16 md:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="p-8 md:p-12 bg-primary text-white rounded-3xl shadow-2xl shadow-primary/30 text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Start Your Journey?</h2>
+                    <p class="text-xl opacity-90 mb-8">
+                        Invest in your health today. No subscriptions, just one upfront cost for lifelong wellness.
+                    </p>
+                    <div class="mb-8">
+                        <span class="text-5xl md:text-7xl font-bold">$149</span>
+                        <span class="text-2xl opacity-80">One-Time Payment</span>
+                    </div>
+                    <a href="#" class="cta-button final-cta relative z-10">
+                        Purchase AuraBand Now
+                    </a>
+                    <p class="mt-4 text-sm opacity-80">30-day money-back guarantee. Free shipping worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ Section -->
+        <section id="faq" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                        <input type="checkbox" id="faq1" class="hidden">
+                        <label for="faq1" class="flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-gray-900 transition duration-150 hover:bg-gray-50">
+                            Is a subscription required for full features?
+                            <span class="transform transition-transform duration-300">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </label>
+                        <div class="faq-content px-6 text-gray-600 border-t border-gray-100">
+                            <p>No, absolutely not. The $149 price is a one-time purchase. All features, data, and future updates are included without any recurring subscription fees.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                        <input type="checkbox" id="faq2" class="hidden">
+                        <label for="faq2" class="flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-gray-900 transition duration-150 hover:bg-gray-50">
+                            How long does the battery last?
+                            <span class="transform transition-transform duration-300">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </label>
+                        <div class="faq-content px-6 text-gray-600 border-t border-gray-100">
+                            <p>The AuraBand features a high-capacity battery designed to last up to 7 full days on a single charge, even with continuous tracking enabled.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                        <input type="checkbox" id="faq3" class="hidden">
+                        <label for="faq3" class="flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-gray-900 transition duration-150 hover:bg-gray-50">
+                            Is the AuraBand waterproof?
+                            <span class="transform transition-transform duration-300">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </label>
+                        <div class="faq-content px-6 text-gray-600 border-t border-gray-100">
+                            <p>Yes, the device is rated IP68, meaning it is fully dust-proof and can be submerged in water up to 1.5 meters for 30 minutes. It's safe for swimming and showering.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer with Contact Details -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-primary-light">AuraBand</h3>
+                <p class="text-sm text-gray-400">
+                    The future of personalized health monitoring. Built for peak performance and effortless living.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#features" class="text-gray-400 hover:text-white transition duration-150">Features</a></li>
+                    <li><a href="#benefits" class="text-gray-400 hover:text-white transition duration-150">Technology</a></li>
+                    <li><a href="#reviews" class="text-gray-400 hover:text-white transition duration-150">Testimonials</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-150">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">Warranty</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Get In Touch</h4>
+                <p class="text-sm text-gray-400 mb-2">Email: <a href="mailto:support@auraband.com" class="hover:text-primary-light">support@auraband.com</a></p>
+                <p class="text-sm text-gray-400">Phone: <a href="tel:+1-800-555-0123" class="hover:text-primary-light">+1 (800) 555-0123</a></p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-700 mt-10 pt-8 text-center text-sm text-gray-500">
+            &copy; 2024 AuraBand Inc. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Custom Button Styles - Applied Globally -->
+    <style>
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative; /* Ensure stacking context */
+        }
+        .primary-cta {
+            background-color: var(--primary); /* Indigo 600 */
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.5), 0 4px 6px -2px rgba(79, 70, 229, 0.05); /* Soft Primary Shadow */
+        }
+        .primary-cta:hover {
+            background-color: #6366f1; /* Indigo 500 */
+            transform: translateY(-2px);
+        }
+        .secondary-cta {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Soft Gray Shadow */
+        }
+        .secondary-cta:hover {
+            background-color: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+        .final-cta {
+            background-color: var(--secondary); /* Emerald 500 */
+            color: var(--primary);
+            font-size: 1.25rem; /* text-xl */
+            padding: 1rem 3rem;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.6); /* Strong Secondary Shadow */
+        }
+        .final-cta:hover {
+            background-color: #059669; /* Emerald 600 */
+            transform: translateY(-4px);
+            color: white;
+        }
+    </style>
+
+    <script>
+        // Simple JS to toggle the FAQ accordion icons and state
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                const label = item.querySelector('label');
+                const icon = label.querySelector('span');
+
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
